@@ -26,6 +26,6 @@ jobs:
 
       - name: Run tests with pytest
         env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          PYTHONPATH: .
         run: |
           pytest --maxfail=1 --disable-warnings -q

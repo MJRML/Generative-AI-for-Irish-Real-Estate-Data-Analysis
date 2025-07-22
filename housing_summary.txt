@@ -1,0 +1,13 @@
+Based on the housing market data from the Daft dataset, we can observe several key insights:
+
+1. **Pricing**: The average price of a property in this market is €427,750. This indicates that the market is relatively high-priced, especially considering the average floor area of 397.7 m². This suggests that properties in this market may be on the larger and more expensive side.
+
+2. **Property Types**: The most common property type in this market is detached homes. This could indicate a preference for standalone properties with more privacy and space among buyers in this market.
+
+3. **Location**: Dublin is the most listed county in this dataset. This suggests that the housing market in Dublin is active and potentially more competitive compared to other counties. It also indicates that Dublin is a popular location for property listings.
+
+4. **Bedrooms and Bathrooms**: The average number of bedrooms is 2.7 and the average number of bathrooms is 1.8. This indicates that properties in this market tend to have slightly more bedrooms than bathrooms on average, which could be a factor influencing buyer preferences.
+
+5. **Interesting Patterns**: One interesting pattern to note is the relatively high average floor area compared to the average price. This could suggest that properties in this market offer more space for the price, potentially making them attractive to buyers looking for larger homes.
+
+Overall, this housing market analysis indicates a market with higher-priced properties, a preference for detached homes, a strong presence of listings in Dublin

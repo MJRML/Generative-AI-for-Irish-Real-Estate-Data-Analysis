@@ -29,4 +29,10 @@ jobs:
           PYTHONPATH: .
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
-          pytest --maxfail=1 --disable-warnings -q
+          pytest --maxfail=1 --disable-warnings -q --junitxml=report.xml
+
+      - name: Upload test report
+        uses: actions/upload-artifact@v3
+        with:
+          name: pytest-report
+          path: report.xml

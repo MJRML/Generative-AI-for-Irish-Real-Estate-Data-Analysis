@@ -59,17 +59,17 @@
 
 ### 7. **GitHub Project Structuring**
 
-Gen-AI-Irish-Real-Estate-Markey-Data-Analysis/
-├── .github/workflows/main.yml # GitHub Actions workflow
-├── data/daft_housing_data.csv # Raw CSV data
-├── analysis.py # Main script with GPT integration
-├── eda.py # Optional EDA script (modular)
-├── tests/
-│ └── test_analysis.py # Unit tests
-├── requirements.txt # Project dependencies
-├── .gitignore # Excludes venv, .env, etc.
-├── README.md # This file!
-└── housing_summary.txt # AI-generated analysis output
+- `Gen-AI-Irish-Real-Estate-Markey-Data-Analysis/`
+  - `.github/workflows/main.yml` – GitHub Actions workflow
+  - `data/daft_housing_data.csv` – Raw CSV data
+  - `analysis.py` – Main script with GPT integration
+  - `eda.py` – EDA script (optional)
+  - `tests/`
+    - `test_analysis.py` – Unit tests
+  - `requirements.txt` – Project dependencies
+  - `.gitignore` – Excludes venv, .env, etc.
+  - `README.md` – Project overview
+  - `housing_summary.txt` – AI-generated output
 
 ### Tools & Technologies Used
 - Python 3.11 --> Programming language

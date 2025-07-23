@@ -72,14 +72,14 @@
   - `housing_summary.txt` – AI-generated output
 
 ### Tools & Technologies Used
-- Python 3.11 --> Programming language
-- Pandas --> Data cleaning & aggregation
-- OpenAI SDK --> AI-generated text summaries
-- pytest --> Unit testing framework
-- GitHub Actions  --> Continuous Integration pipeline
-- .env + dotenv	Secure API key handling
-- Git / GitHub	--> Version control and collaboration
-- Visual Studio Code  --> IDE
+- **Python 3.11** --> Programming language
+- **Pandas** --> Data cleaning & aggregation
+- **OpenAI SDK** --> AI-generated text summaries
+- **pytest** --> Unit testing framework
+- **GitHub Actions**  --> Continuous Integration pipeline
+- **.env + dotenv** -->	Secure API key handling
+- **Git / GitHub**	--> Version control and collaboration
+- **Visual Studio Code**  --> IDE
 
 
 

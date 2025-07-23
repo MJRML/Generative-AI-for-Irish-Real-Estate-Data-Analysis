@@ -59,6 +59,7 @@
 
 ### 7. **GitHub Project Structuring**
 
+Gen-AI-Irish-Real-Estate-Markey-Data-Analysis/
 ├── .github/workflows/main.yml # GitHub Actions workflow
 ├── data/daft_housing_data.csv # Raw CSV data
 ├── analysis.py # Main script with GPT integration

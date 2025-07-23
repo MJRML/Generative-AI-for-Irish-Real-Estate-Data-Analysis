@@ -45,10 +45,29 @@ def analyze_housing_data(csv_path="data/daft_housing_data.csv"):
     df["Number of Bathrooms"] = df["Number of Bathrooms"].apply(extract_number)
     df["Floor Area (m2)"] = df["Floor Area (m2)"].apply(extract_number)
 
+    print("\n🔎 EDA Preprocessing Steps")
+    print("\nFirst 10 rows:")
+    print(df.head(10))
+
+    print("\nDataset info:")
+    print(df.info())
+
+    print("\nNull value counts:")
+    print(df.isnull().sum())
+
     # Drop rows with missing critical values
     df = df.dropna(subset=["Price", "Number of Bedrooms", "Number of Bathrooms", "Floor Area (m2)"])
 
-    # Compute statistics
+    # Correlation check
+    print("\nCorrelation matrix:")
+    corr = df[["Price", "Number of Bathrooms", "Floor Area (m2)", "Latitude", "Longitude", "Listing Views", "Date of Construction"]].corr()
+    print(corr)
+
+    # Drop low-correlated features from stats (optional)
+    low_corr_cols = corr["Price"][abs(corr["Price"]) < 0.05].index.tolist()
+    print("\nDropping low-correlated columns (to Price):", low_corr_cols)
+
+    # Compute statistics for prompt
     stats = {
         "avg_price": df["Price"].mean(),
         "avg_bedrooms": df["Number of Bedrooms"].mean(),
@@ -58,12 +77,12 @@ def analyze_housing_data(csv_path="data/daft_housing_data.csv"):
         "most_common_county": df["County"].mode().iloc[0],
     }
 
-    # Generate prompt
+    # Generate GPT prompt
     prompt = prompt_from_housing_stats(stats)
 
-    # Call OpenAI API using chat model
+    # Get AI-generated summary
     response = client.chat.completions.create(
-        model="gpt-3.5-turbo",  # or "gpt-4"
+        model="gpt-3.5-turbo", 
         messages=[
             {"role": "system", "content": "You are a data analyst."},
             {"role": "user", "content": prompt}
@@ -73,9 +92,9 @@ def analyze_housing_data(csv_path="data/daft_housing_data.csv"):
     )
 
     summary = response.choices[0].message.content.strip()
-    print("AI Summary:\n", summary)
+    print("\n AI Summary:\n", summary)
 
-    # Save output to file
+    # Save summary
     with open("housing_summary.txt", "w", encoding="utf-8") as f:
         f.write(summary)
 
